@@ -3,7 +3,6 @@ package ru.maxvagan.exercise24;
 import org.springframework.stereotype.Service;
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
-
     @Override
     public String getMain() {
         return "<h1>Some HTML code version 4 for displaying Status</h1>" +
@@ -12,7 +11,6 @@ public class CalculatorServiceImpl implements CalculatorService {
                 "<tr><h3>For Multiply arithmetic call multiply?num1=...&num2=...</h3></tr>" +
                 "<tr><h3>For Divide arithmetic call divide?num1=...&num2=...</h3></tr></td>";
     }
-
     private boolean checkParamsValidation(String num1, String num2) {
         boolean check = num1.isEmpty() || num2.isEmpty();
         int checkNumber = 0;
@@ -24,7 +22,6 @@ public class CalculatorServiceImpl implements CalculatorService {
         }
         return check;
     }
-
     @Override
     public String postPlusArithmetic(String num1, String num2) {
         if (!checkParamsValidation(num1, num2))
