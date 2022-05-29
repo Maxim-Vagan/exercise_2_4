@@ -45,7 +45,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     }
     @Override
     public String postDivideArithmetic(String num1, String num2) {
-        if (checkParamsValidation(num1, num2)!= true && Integer.valueOf(num2)!=0)
+        if (!checkParamsValidation(num1, num2) && Integer.valueOf(num2)!=0)
             return "<b><i>Division of two numbers: " + (Integer.valueOf(num1) / Integer.valueOf(num2)) + "</i></b>";
         else if (Integer.valueOf(num2) == 0)
             return "<b><i>Second arguments must not be defined as 0 (Division by Zero Exception)</i></b>";
