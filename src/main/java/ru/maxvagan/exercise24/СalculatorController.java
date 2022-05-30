@@ -1,40 +1,42 @@
 package ru.maxvagan.exercise24;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class calculatorControler {
-    private final calculatorService RespServ;
+@RequestMapping(path = "/calculator")
+public class СalculatorController {
+    private final СalculatorService RespServ;
 
-    public calculatorControler(calculatorService respServ) {
+    public СalculatorController(СalculatorService respServ) {
         this.RespServ = respServ;
     }
 
-    @GetMapping(path = "/calculator")
+    @GetMapping
     public String index() {
         return RespServ.getMain();
     }
-    @GetMapping(path = "/calculator/plus")
+    @GetMapping(path = "/plus")
     public String postPlusArithmetic(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
         //TODO: check if param Num1 and Num2 is Null or non-digital values
         // return "<b><i>Both arguments must be defined as numbers</i></b>";
         return "<b><i>Sum of two numbers: " + RespServ.postPlusArithmetic(num1, num2) + "</i></b>";
     }
-    @GetMapping(path = "/calculator/minus")
+    @GetMapping(path = "/minus")
     public String postMinusArithmetic(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
         //TODO: check if param Num1 and Num2 is Null or non-digital values
         // return "<b><i>Both arguments must be defined as numbers</i></b>";
         return "<b><i>Minus of two numbers: " + RespServ.postMinusArithmetic(num1, num2) + "</i></b>";
     }
-    @GetMapping(path = "/calculator/multiply")
+    @GetMapping(path = "/multiply")
     public String postMultiplyArithmetic(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
         //TODO: check if param Num1 and Num2 is Null or non-digital values
         // return "<b><i>Both arguments must be defined as numbers</i></b>";
         return "<b><i>Multiply of two numbers: " + RespServ.postMultiplyArithmetic(num1, num2) + "</i></b>";
     }
-    @GetMapping(path = "/calculator/divide")
+    @GetMapping(path = "/divide")
     public String postDivideArithmetic(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
         //TODO: check if param Num1 and Num2 is Null or non-digital values
         // return "<b><i>Both arguments must be defined as numbers</i></b>";

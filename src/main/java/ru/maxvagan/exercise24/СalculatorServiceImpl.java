@@ -2,10 +2,10 @@ package ru.maxvagan.exercise24;
 
 import org.springframework.stereotype.Service;
 @Service
-public class calculatorServiceImpl implements calculatorService {
+public class СalculatorServiceImpl implements СalculatorService {
     @Override
     public String getMain() {
-        return "<h1>Some HTML code (version 5) for displaying Status</h1>" +
+        return "<h1>Some HTML code (version 6) for displaying Status</h1>" +
                 "<td><tr><h3>For Plus arithmetic call plus?num1=...&num2=...</h3></tr>" +
                 "<tr><h3>For Minus arithmetic call minus?num1=...&num2=...</h3></tr>" +
                 "<tr><h3>For Multiply arithmetic call multiply?num1=...&num2=...</h3></tr>" +

@@ -1,6 +1,6 @@
 package ru.maxvagan.exercise24;
 
-public interface calculatorService {
+public interface СalculatorService {
     String getMain();
 
     int postPlusArithmetic(int num1, int num2);
