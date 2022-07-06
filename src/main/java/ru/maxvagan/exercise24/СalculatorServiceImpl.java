@@ -1,8 +1,10 @@
 package ru.maxvagan.exercise24;
 
 import org.springframework.stereotype.Service;
+import ru.maxvagan.exercise24.exceptions.ZeroNum2Exception;
+
 @Service
-public class СalculatorServiceImpl implements СalculatorService {
+public class СalculatorServiceImpl implements CalculatorService {
     @Override
     public String getMain() {
         return "<h1>Some HTML code (version 6) for displaying Status</h1>" +
@@ -45,7 +47,8 @@ public class СalculatorServiceImpl implements СalculatorService {
     }
     @Override
     public int postDivideArithmetic(int num1, int num2) {
-        return (num1 / num2);
+        if (num2 == 0) throw new ZeroNum2Exception("Second must not be Zero");
+        else return (num1 / num2);
         /*if (!checkParamsValidation(num1, num2) && Integer.valueOf(num2)!=0)
             return "<b><i>Division of two numbers: " + (Integer.valueOf(num1) / Integer.valueOf(num2)) + "</i></b>";
         else if (Integer.valueOf(num2) == 0)
